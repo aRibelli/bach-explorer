@@ -1,0 +1,7 @@
+{
+  "name": "bach-explorer",
+  "version": "1.0.0",
+  "description": "Explorateur des œuvres chorales de Bach pour usage en concert",
+  "private": true,
+  "type": "module"
+}
