@@ -382,3 +382,8 @@ function setup() {
 
   els.searchInput.focus();
 }
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setup);
+} else {
+  setup();
+}
