@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   BACH EXPLORER — Logique applicative
+   BACH EXPLORER — Logique applicative — v2
    ═══════════════════════════════════════════════════════════════ */
 
 // ───────────────────────────────────────────────
@@ -134,6 +134,7 @@ const els = {
   loadingLabel:    $("loading-label"),
   errorMessage:    $("error-message"),
   errorBack:       $("error-back"),
+  errorRetry:      $("error-retry"),
   workContent:     $("work-content"),
   screens: {
     home:    $("screen-home"),
@@ -149,6 +150,7 @@ const els = {
 let currentScreen = "home";
 let loadingInterval = null;
 let calendarOverlay = null;
+let lastQuery = null;          // mémorise la dernière requête pour « Réessayer »
 
 // ───────────────────────────────────────────────
 // NAVIGATION ENTRE ÉCRANS
@@ -209,7 +211,6 @@ function renderCalendar() {
 
 function openCalendar() {
   els.calendarPanel.hidden = false;
-  // déclenche le repaint pour activer la transition
   requestAnimationFrame(() => {
     els.calendarPanel.dataset.open = "true";
     if (!calendarOverlay) {
@@ -226,7 +227,6 @@ function closeCalendar() {
   if (els.calendarPanel.dataset.open !== "true") return;
   els.calendarPanel.dataset.open = "false";
   if (calendarOverlay) calendarOverlay.dataset.visible = "false";
-  // ne masque le panneau qu'après la transition
   setTimeout(() => {
     if (els.calendarPanel.dataset.open === "false") {
       els.calendarPanel.hidden = true;
@@ -239,11 +239,12 @@ function closeCalendar() {
 // ───────────────────────────────────────────────
 async function loadWork(query) {
   if (!query || !query.trim()) return;
+  query = query.trim();
+  lastQuery = query;
 
   showScreen("loading");
   els.loadingLabel.textContent = query;
 
-  // Cycle de messages pendant le chargement
   let idx = 0;
   els.loadingMessage.textContent = LOADING_MSGS[0];
   loadingInterval = setInterval(() => {
@@ -255,30 +256,67 @@ async function loadWork(query) {
     const response = await fetch("/api/bach", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: query.trim() }),
+      body: JSON.stringify({ query }),
     });
 
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Erreur serveur (${response.status}) : ${errText}`);
+    // On tente toujours de lire le corps en JSON : même en cas
+    // d'erreur, le serveur renvoie { error: "..." } exploitable.
+    let data = null;
+    try {
+      data = await response.json();
+    } catch (e) {
+      data = null;
     }
 
-    const data = await response.json();
-    if (data.error) throw new Error(data.error);
-    if (!data.work) throw new Error("Réponse incomplète du serveur.");
+    if (!response.ok) {
+      const msg = (data && data.error)
+        ? data.error
+        : "Le service est momentanément indisponible.";
+      throw new Error(msg);
+    }
+
+    if (!data) {
+      throw new Error("Réponse illisible du serveur.");
+    }
+    if (data.error) {
+      // Erreur « propre » (œuvre non identifiée, etc.)
+      throw new Error(data.error);
+    }
+    if (!data.work) {
+      throw new Error("Réponse incomplète du serveur.");
+    }
 
     renderWork(data.work);
     showScreen("work");
     window.scrollTo({ top: 0, behavior: "instant" });
   } catch (err) {
     console.error(err);
-    els.errorMessage.textContent = err.message || "Une erreur est survenue.";
-    showScreen("error");
+    showError(err.message || "Une erreur est survenue.");
   }
 }
 
 // ───────────────────────────────────────────────
-// RENDU D'UNE ŒUVRE
+// AFFICHAGE D'UNE ERREUR — épuré, sans JSON brut
+// ───────────────────────────────────────────────
+function showError(message) {
+  // Nettoyage défensif : si un fragment de JSON a traversé,
+  // on tente d'en extraire le message lisible.
+  let clean = String(message).trim();
+  const m = clean.match(/"error"\s*:\s*"([^"]+)"/);
+  if (m) clean = m[1];
+  // On retire d'éventuelles accolades ou guillemets résiduels.
+  clean = clean.replace(/^[\s{"]+|[\s}"]+$/g, "");
+
+  els.errorMessage.textContent = clean;
+
+  // Le bouton « Réessayer » n'a de sens que si une requête existe.
+  els.errorRetry.hidden = !lastQuery;
+
+  showScreen("error");
+}
+
+// ───────────────────────────────────────────────
+// RENDU — utilitaires
 // ───────────────────────────────────────────────
 function escapeHtml(s) {
   if (typeof s !== "string") return "";
@@ -307,6 +345,54 @@ function typeColor(type) {
   return "var(--text-meta)";
 }
 
+// ───────────────────────────────────────────────
+// RENDU — panneau Informations
+// ───────────────────────────────────────────────
+function renderMeta(meta) {
+  // Bloc des données factuelles
+  const facts = [];
+  if (meta.date)       facts.push(`<div><strong>Date :</strong> ${escapeHtml(meta.date)}</div>`);
+  if (meta.place)      facts.push(`<div><strong>Lieu :</strong> ${escapeHtml(meta.place)}</div>`);
+  if (meta.occasion)   facts.push(`<div><strong>Occasion :</strong> ${escapeHtml(meta.occasion)}</div>`);
+  if (meta.librettist) facts.push(`<div><strong>Livret :</strong> ${escapeHtml(meta.librettist)}</div>`);
+  if (meta.scoring)    facts.push(`<div><strong>Effectif :</strong> ${escapeHtml(meta.scoring)}</div>`);
+
+  let html = "";
+
+  if (facts.length) {
+    html += `
+      <div class="work-meta-section">
+        <p class="work-meta-facts">${facts.join("")}</p>
+      </div>
+    `;
+  }
+
+  // Sections rédigées : contexte théologique, musical, interprétations.
+  // On reste compatible avec l'ancien champ « notes » au cas où.
+  const sections = [
+    ["Contexte théologique", meta.theological],
+    ["Spécificités musicales", meta.musical],
+    ["Interprétations de référence", meta.interpretations],
+    ["Notes", meta.notes],
+  ];
+
+  for (const [heading, body] of sections) {
+    if (body && String(body).trim()) {
+      html += `
+        <div class="work-meta-section">
+          <p class="work-meta-heading">${escapeHtml(heading)}</p>
+          <p class="work-meta-body">${escapeHtml(String(body).trim())}</p>
+        </div>
+      `;
+    }
+  }
+
+  return html || `<p class="work-meta-body">Informations non disponibles pour cette œuvre.</p>`;
+}
+
+// ───────────────────────────────────────────────
+// RENDU — œuvre complète
+// ───────────────────────────────────────────────
 function renderWork(work) {
   const meta = work.metadata || {};
   const mvts = work.movements || [];
@@ -319,12 +405,7 @@ function renderWork(work) {
       <button class="work-meta-toggle" id="meta-toggle">▸ Informations</button>
     </div>
     <div class="work-meta" id="work-meta" hidden>
-      ${meta.date ? `<p><strong>Date :</strong> ${escapeHtml(meta.date)}</p>` : ""}
-      ${meta.place ? `<p><strong>Lieu :</strong> ${escapeHtml(meta.place)}</p>` : ""}
-      ${meta.occasion ? `<p><strong>Occasion :</strong> ${escapeHtml(meta.occasion)}</p>` : ""}
-      ${meta.librettist ? `<p><strong>Librettiste :</strong> ${escapeHtml(meta.librettist)}</p>` : ""}
-      ${meta.scoring ? `<p><strong>Effectif :</strong> ${escapeHtml(meta.scoring)}</p>` : ""}
-      ${meta.notes ? `<p>${escapeHtml(meta.notes)}</p>` : ""}
+      ${renderMeta(meta)}
     </div>
   `;
 
@@ -333,9 +414,10 @@ function renderWork(work) {
     html += `
       <article class="movement">
         <header class="movement-header">
-          ${m.number ? `<span class="movement-number">${escapeHtml(m.number)}</span>` : ""}
+          ${m.number ? `<span class="movement-number">${escapeHtml(String(m.number))}</span>` : ""}
           ${m.type ? `<span class="movement-type" style="color: ${color}">${escapeHtml(m.type)}</span>` : ""}
           ${m.voice ? `<span class="movement-voice">${escapeHtml(m.voice)}</span>` : ""}
+          ${m.scoring ? `<span class="movement-scoring">${escapeHtml(m.scoring)}</span>` : ""}
         </header>
         <div class="movement-text">
           <div class="text-german">${paragraphs(m.textGerman || m.textOriginal || "")}</div>
@@ -347,13 +429,13 @@ function renderWork(work) {
 
   els.workContent.innerHTML = html;
 
-  // Toggle métadonnées
+  // Toggle du panneau Informations
   const toggle = $("meta-toggle");
-  const meta_el = $("work-meta");
-  if (toggle && meta_el) {
+  const metaEl = $("work-meta");
+  if (toggle && metaEl) {
     toggle.addEventListener("click", () => {
-      const isOpen = !meta_el.hidden;
-      meta_el.hidden = isOpen;
+      const isOpen = !metaEl.hidden;
+      metaEl.hidden = isOpen;
       toggle.textContent = isOpen ? "▸ Informations" : "▾ Informations";
     });
   }
@@ -369,6 +451,13 @@ function setup() {
   els.homeButton.addEventListener("click", goHome);
   els.errorBack.addEventListener("click", goHome);
 
+  // « Réessayer » relance la dernière requête mémorisée
+  if (els.errorRetry) {
+    els.errorRetry.addEventListener("click", () => {
+      if (lastQuery) loadWork(lastQuery);
+    });
+  }
+
   els.searchButton.addEventListener("click", () => {
     loadWork(els.searchInput.value);
   });
@@ -382,6 +471,7 @@ function setup() {
 
   els.searchInput.focus();
 }
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", setup);
 } else {
