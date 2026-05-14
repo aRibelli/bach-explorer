@@ -1,0 +1,43 @@
+{
+  "work": {
+    "bwv": "BWV 226",
+    "titleGerman": "Der Geist hilft unser Schwachheit auf",
+    "titleFrench": "L'Esprit vient en aide à notre faiblesse",
+    "metadata": {
+      "date": "Composé en octobre 1729.",
+      "place": "Leipzig.",
+      "occasion": "Service funèbre de Johann Heinrich Ernesti, recteur de l'école Saint-Thomas, célébré le 20 octobre 1729 à l'église de l'Université. C'est l'un des rares motets dont l'occasion soit documentée avec précision.",
+      "librettist": "Épître aux Romains 8, 26-27 ; strophe finale du choral « Komm, Heiliger Geist, Herre Gott » de Martin Luther.",
+      "scoring": "Double chœur à quatre voix (SATB / SATB). Bach a laissé des parties instrumentales séparées : cordes doublant le chœur I, hautbois et basson doublant le chœur II — l'un des rares motets à instrumentation explicitement notée.",
+      "theological": "Texte de consolation funèbre par excellence : l'Esprit prie en nous lorsque les mots manquent, « par des soupirs inexprimables ». Devant la mort d'un maître, l'œuvre ne console pas par des certitudes mais par cette idée — l'intercession de l'Esprit supplée notre impuissance même à prier. Le choral final referme sur la prière d'être conduit à travers la mort vers la vie.",
+      "musical": "Œuvre en trois sections enchaînées. Les deux premières exploitent le double chœur en dialogue puis en fusion, avec un remarquable passage fugué sur « der Geist selbst vertritt uns aufs beste ». La troisième section, sur le verset « Der aber die Herzen forschet », est une fugue où les deux chœurs se réunissent en un seul à quatre voix. Le choral final, homophone et grave, apaise la polyphonie en recueillement.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en propose une lecture d'une grande tenue. Le RIAS-Kammerchor sous Rademann et Vox Luminis sous Lionel Meunier figurent parmi les références modernes. Les approches à une voix par partie révèlent la clarté du double chœur ; les chœurs plus étoffés en soulignent la solennité funèbre."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur (double chœur)",
+        "voice": "SATB / SATB",
+        "scoring": "cordes (chœur I), hautbois et basson (chœur II)",
+        "textGerman": "Der Geist hilft unser Schwachheit auf,\ndenn wir wissen nicht, was wir beten sollen, wie sich's gebühret;\nsondern der Geist selbst vertritt uns aufs beste mit unaussprechlichem Seufzen.",
+        "textFrench": "L'Esprit vient en aide à notre faiblesse,\ncar nous ne savons pas ce qu'il convient de demander dans nos prières ;\nmais l'Esprit lui-même intercède pour nous au mieux, par des soupirs inexprimables."
+      },
+      {
+        "number": "2",
+        "type": "Chœur (fugue, double chœur réuni)",
+        "voice": "SATB",
+        "scoring": "cordes, hautbois, basson colla parte",
+        "textGerman": "Der aber die Herzen forschet, der weiß, was des Geistes Sinn sei;\ndenn er vertritt die Heiligen nach dem, das Gott gefället.",
+        "textFrench": "Mais celui qui sonde les cœurs sait quelle est la pensée de l'Esprit ;\ncar il intercède pour les saints selon ce qui plaît à Dieu."
+      },
+      {
+        "number": "3",
+        "type": "Choral",
+        "voice": "SATB",
+        "scoring": "cordes, hautbois, basson colla parte",
+        "textGerman": "Du heilige Brunst, süßer Trost,\nnun hilf uns, fröhlich und getrost\nin deinem Dienst beständig bleiben,\ndie Trübsal uns nicht abtreiben.\nO Herr, durch dein Kraft uns bereit\nund stärk des Fleisches Blödigkeit,\ndass wir hie ritterlich ringen,\ndurch Tod und Leben zu dir dringen.\nHalleluja, halleluja.",
+        "textFrench": "Ô sainte ardeur, douce consolation,\naide-nous maintenant, joyeux et confiants,\nà demeurer constants en ton service,\nque l'affliction ne nous en détourne pas.\nÔ Seigneur, par ta force prépare-nous\net affermis la faiblesse de la chair,\nafin qu'ici nous luttions vaillamment,\net qu'à travers la mort et la vie nous parvenions jusqu'à toi.\nAlléluia, alléluia."
+      }
+    ]
+  }
+}

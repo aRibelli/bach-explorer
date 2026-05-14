@@ -1,0 +1,107 @@
+{
+  "work": {
+    "bwv": "BWV 249",
+    "titleGerman": "Kommt, eilet und laufet (Oster-Oratorium)",
+    "titleFrench": "Venez, hâtez-vous et courez (Oratorio de Pâques)",
+    "metadata": {
+      "date": "Créé le jour de Pâques, 1er avril 1725. Plusieurs fois remanié jusque vers 1740 ; le titre d'« oratorio » lui est donné dans les versions tardives.",
+      "place": "Leipzig.",
+      "occasion": "Jour de Pâques. Avec les oratorios de Noël (BWV 248) et de l'Ascension (BWV 11), l'œuvre forme un triptyque des grandes fêtes.",
+      "librettist": "Livret de Picander. L'œuvre est une parodie d'une cantate profane antérieure (BWV 249a, « Entfliehet, verschwindet »). Contrairement aux autres Passions et oratorios, le texte n'est pas un récit évangélique direct : quatre personnages — Marie de Magdala, Marie mère de Jacques, Pierre et Jean — méditent la scène du tombeau vide.",
+      "scoring": "Soli SATB (les quatre personnages), chœur ; trois trompettes, timbales, deux flûtes traversières, deux hautbois, hautbois d'amore, basson, cordes, basse continue.",
+      "theological": "L'Oratorio de Pâques ne raconte pas la Résurrection, il en explore l'émotion : la course haletante vers le tombeau, la stupeur devant le linceul abandonné, la joie qui peine encore à se croire. C'est une dramaturgie de l'attente comblée. L'aria « Sanfte soll mein Todeskummer » transforme la mort elle-même en sommeil apaisé — la Résurrection a vidé la mort de son effroi. L'œuvre s'achève en jubilation trompettante : l'enfer est vaincu, le lion de Juda triomphe.",
+      "musical": "Œuvre d'origine profane magnifiquement reconvertie. Elle s'ouvre par deux mouvements instrumentaux — une Sinfonia éclatante puis un Adagio pour hautbois solo — avant même la première intervention vocale, ce qui est unique dans le corpus des oratorios. L'aria de soprano « Seele, deine Spezereien », avec flûte obligée, est d'une délicatesse extrême. L'aria de ténor « Sanfte soll mein Todeskummer », bercée par les flûtes, est l'un des sommets de douceur de Bach. Le chœur final, trompettes en avant, claque comme une victoire.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture lumineuse et équilibrée. John Eliot Gardiner (Monteverdi Choir, Archiv) privilégie l'éclat et l'allant dramatique. Gustav Leonhardt et Nikolaus Harnoncourt, dans leur intégrale Teldec, en proposent une version pionnière sur instruments anciens. Masaaki Suzuki (Bach Collegium Japan, BIS) conjugue transparence et tendresse."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Sinfonia",
+        "voice": "—",
+        "scoring": "3 trompettes, timbales, hautbois, cordes, continuo",
+        "textGerman": "(Sinfonia instrumentale — sans texte. Mouvement d'ouverture éclatant, en ré majeur.)",
+        "textFrench": "(Sinfonia instrumentale — sans texte. Mouvement d'ouverture éclatant, en ré majeur.)"
+      },
+      {
+        "number": "2",
+        "type": "Adagio",
+        "voice": "—",
+        "scoring": "hautbois solo, cordes, continuo",
+        "textGerman": "(Adagio instrumental — sans texte. Hautbois solo chantant, contraste recueilli après la Sinfonia.)",
+        "textFrench": "(Adagio instrumental — sans texte. Hautbois solo chantant, contraste recueilli après la Sinfonia.)"
+      },
+      {
+        "number": "3",
+        "type": "Chœur (Duo puis chœur)",
+        "voice": "Ténor, Basse, puis SATB",
+        "scoring": "3 trompettes, timbales, hautbois, cordes, continuo",
+        "textGerman": "Kommt, eilet und laufet, ihr flüchtigen Füße,\nerreichet die Höhle, die Jesum bedeckt!\nLachen und Scherzen\nbegleitet die Herzen,\ndenn unser Heil ist auferweckt.",
+        "textFrench": "Venez, hâtez-vous et courez, ô pieds rapides,\natteignez la grotte qui recouvre Jésus !\nRires et joie\naccompagnent les cœurs,\ncar notre salut est ressuscité."
+      },
+      {
+        "number": "4",
+        "type": "Récitatif",
+        "voice": "Soprano, Alto, Ténor, Basse",
+        "scoring": "continuo",
+        "textGerman": "Maria Jacobi: O kalter Männer Sinn!\nWo ist die Liebe hin,\ndie ihr dem Heiland schuldig seid?\nMaria Magdalena: Ein schwaches Weib muss euch beschämen!\nPetrus: Ach, ein betrübtes Grämen\nJohannes: und banges Herzeleid\nPetrus, Johannes: hat mit gesalznen Tränen\nund wehmutsvollem Sehnen\nihm eine Salbung zugedacht,\nMaria Jacobi, Maria Magdalena: die ihr, wie wir, umsonst gemacht.",
+        "textFrench": "Marie de Jacques : Ô cœur froid des hommes !\nOù est passé l'amour\nque vous devez au Sauveur ?\nMarie de Magdala : Une faible femme doit vous faire honte !\nPierre : Ah, une affliction douloureuse\nJean : et une angoisse anxieuse\nPierre, Jean : ont, avec des larmes salées\net une nostalgie pleine de tristesse,\nvoulu lui préparer un embaumement,\nMarie de Jacques, Marie de Magdala : que vous, comme nous, avez fait en vain."
+      },
+      {
+        "number": "5",
+        "type": "Aria",
+        "voice": "Soprano",
+        "scoring": "flûte traversière, continuo",
+        "textGerman": "Seele, deine Spezereien\nsollen nicht mehr Myrrhen sein.\nDenn allein\nmit dem Lorbeerkranze prangen,\nstillt dein ängstliches Verlangen.",
+        "textFrench": "Mon âme, tes aromates\nne doivent plus être de la myrrhe.\nCar c'est seulement\nresplendir de la couronne de laurier\nqui apaisera ton désir anxieux."
+      },
+      {
+        "number": "6",
+        "type": "Récitatif",
+        "voice": "Ténor, Basse, Alto",
+        "scoring": "continuo",
+        "textGerman": "Petrus: Hier ist die Gruft\nJohannes: und hier der Stein,\nder solche zugedeckt.\nWo aber wird mein Heiland sein?\nMaria Magdalena: Er ist vom Tode auferweckt!\nWir trafen einen Engel an,\nder hat uns solches kundgetan.\nPetrus: Hier seh ich mit Vergnügen\ndas Schweißtuch abgewickelt liegen.",
+        "textFrench": "Pierre : Voici le tombeau\nJean : et voici la pierre\nqui le recouvrait.\nMais où donc sera mon Sauveur ?\nMarie de Magdala : Il est ressuscité d'entre les morts !\nNous avons rencontré un ange\nqui nous l'a annoncé.\nPierre : Ici je vois avec joie\nle linceul gisant déroulé."
+      },
+      {
+        "number": "7",
+        "type": "Aria",
+        "voice": "Ténor",
+        "scoring": "flûtes traversières, cordes avec sourdine, continuo",
+        "textGerman": "Sanfte soll mein Todeskummer,\nnur ein Schlummer,\nJesu, durch dein Schweißtuch sein.\nJa, das wird mich dort erfrischen\nund die Zähren meiner Pein\nvon den Wangen tröstlich wischen.",
+        "textFrench": "Doux ne sera mon tourment de mort,\nrien qu'un sommeil,\nJésus, par ton linceul.\nOui, cela me rafraîchira là-bas\net les larmes de ma peine,\nde mes joues les essuiera avec consolation."
+      },
+      {
+        "number": "8",
+        "type": "Récitatif",
+        "voice": "Soprano, Alto",
+        "scoring": "continuo",
+        "textGerman": "Maria Magdalena: Indessen seufzen wir\nmit brennender Begier:\nAch, könnt es doch nur bald geschehen,\nden Heiland selbst zu sehen!",
+        "textFrench": "Marie de Magdala : Cependant nous soupirons\nd'un désir ardent :\nAh, si seulement cela pouvait bientôt arriver,\nde voir le Sauveur lui-même !"
+      },
+      {
+        "number": "9",
+        "type": "Aria",
+        "voice": "Alto",
+        "scoring": "hautbois d'amore, cordes, continuo",
+        "textGerman": "Saget, saget mir geschwinde,\nsaget, wo ich Jesum finde,\nwelchen meine Seele liebt!\nKomm doch, komm, umfasse mich;\ndenn mein Herz ist ohne dich\nganz verwaiset und betrübt.",
+        "textFrench": "Dites, dites-moi vite,\ndites où je trouve Jésus,\ncelui que mon âme aime !\nViens donc, viens, embrasse-moi ;\ncar mon cœur, sans toi,\nest tout orphelin et affligé."
+      },
+      {
+        "number": "10",
+        "type": "Récitatif",
+        "voice": "Basse",
+        "scoring": "continuo",
+        "textGerman": "Wir sind erfreut,\ndass unser Jesus wieder lebt,\nund unser Herz,\nso erst in Traurigkeit zerflossen und geschwebt,\nvergisst den Schmerz\nund sinnt auf Freudenlieder;\ndenn unser Heiland lebet wieder.",
+        "textFrench": "Nous sommes remplis de joie\nque notre Jésus vive de nouveau,\net notre cœur,\nqui d'abord fondait et flottait dans la tristesse,\noublie la douleur\net songe à des chants de joie ;\ncar notre Sauveur vit de nouveau."
+      },
+      {
+        "number": "11",
+        "type": "Chœur",
+        "voice": "SATB",
+        "scoring": "3 trompettes, timbales, hautbois, cordes, continuo",
+        "textGerman": "Preis und Dank\nbleibe, Herr, dein Lobgesang.\nHöll und Teufel sind bezwungen,\nihre Pforten sind zerstört.\nJauchzet, ihr erlösten Zungen,\ndass man es im Himmel hört.\nEröffnet, ihr Himmel, die prächtigen Bogen,\nder Löwe von Juda kommt siegend gezogen!",
+        "textFrench": "Louange et action de grâce\ndemeurent, Seigneur, ton cantique.\nL'enfer et le diable sont vaincus,\nleurs portes sont détruites.\nExultez, ô langues rachetées,\nque cela s'entende jusqu'au ciel.\nOuvrez, ô cieux, vos arches magnifiques,\nle lion de Juda s'avance en vainqueur !"
+      }
+    ]
+  }
+}

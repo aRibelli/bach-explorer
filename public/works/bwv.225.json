@@ -1,0 +1,43 @@
+{
+  "work": {
+    "bwv": "BWV 225",
+    "titleGerman": "Singet dem Herrn ein neues Lied",
+    "titleFrench": "Chantez à l'Éternel un cantique nouveau",
+    "metadata": {
+      "date": "Vers 1726-1727, datation incertaine. L'occasion précise n'est pas documentée.",
+      "place": "Leipzig.",
+      "occasion": "Occasion inconnue — peut-être une fête, un anniversaire, ou un usage funéraire. Mozart, de passage à Leipzig en 1789, fut bouleversé en l'entendant chanter par le chœur de Saint-Thomas.",
+      "librettist": "Psaumes 149 et 150 ; strophe du choral « Nun lob, mein Seel, den Herren » de Johann Gramann ; poème libre anonyme.",
+      "scoring": "Double chœur à quatre voix (SATB / SATB). L'accompagnement instrumental, non spécifié, doublait probablement les voix (colla parte).",
+      "theological": "Le plus jubilatoire des motets : un appel à la louange qui mobilise toute la création — chant nouveau, danse, instruments. Mais au cœur de cette exultation, le choral médite la fragilité de l'homme, « comme l'herbe des champs ». La louange n'est pas insouciance : elle s'élève en pleine conscience de la finitude. La fin, « Alles, was Odem hat », confie le dernier mot au souffle même de la vie.",
+      "musical": "Sommet de l'écriture à double chœur. Le premier mouvement est une fugue éclatante où les deux chœurs s'interpellent et fusionnent. Le mouvement central superpose génialement deux strates : le chœur II énonce le choral, le chœur I tisse autour un commentaire poétique libre — polyphonie de polyphonies. Le finale, « Lobet den Herrn », est une fugue à huit voix réelles d'une virtuosité confondante. Œuvre d'une exigence technique extrême, redoutée et adorée des chœurs.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture d'une clarté et d'une ferveur exemplaires. Le RIAS-Kammerchor sous Hans-Christoph Rademann fait référence. Les Vocalconsort et ensembles à une voix par partie (Pygmalion sous Raphaël Pichon, Vox Luminis sous Lionel Meunier) en proposent une transparence saisissante. Gardiner et le Monteverdi Choir y déploient un allant caractéristique."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur (double chœur)",
+        "voice": "SATB / SATB",
+        "scoring": "voix, instruments colla parte",
+        "textGerman": "Singet dem Herrn ein neues Lied,\ndie Gemeine der Heiligen sollen ihn loben.\nIsrael freue sich des, der ihn gemacht hat.\nDie Kinder Zion sei'n fröhlich über ihrem Könige,\nsie sollen loben seinen Namen im Reihen,\nmit Pauken und mit Harfen sollen sie ihm spielen.",
+        "textFrench": "Chantez à l'Éternel un cantique nouveau,\nque l'assemblée des fidèles le loue.\nQu'Israël se réjouisse en celui qui l'a créé.\nQue les enfants de Sion soient joyeux à cause de leur Roi,\nqu'ils louent son nom dans la danse,\nqu'ils le célèbrent avec le tambourin et la harpe."
+      },
+      {
+        "number": "2",
+        "type": "Chœur (Aria et Choral, double chœur)",
+        "voice": "Chœur I (aria) / Chœur II (choral)",
+        "scoring": "voix, instruments colla parte",
+        "textGerman": "Chœur I (poème libre): Gott, nimm dich ferner unser an,\ndenn ohne dich ist nichts getan\nmit allen unsern Sachen.\nDrum sei du unser Schirm und Licht,\nund trügt uns unsre Hoffnung nicht,\nso wirst du's ferner machen.\nWohl dem, der sich nur steif und fest\nauf dich und deine Huld verlässt.\n\nChœur II (choral): Wie sich ein Vatr erbarmet\nübr seine junge Kindlein klein:\nso tut der Herr uns Armen,\nso wir ihn kindlich fürchten rein.\nEr kennt das arm Gemächte,\nGott weiß, wir sind nur Staub,\ngleichwie das Gras vom Rechen,\nein Blum und fallend Laub.\nDer Wind nur drüber wehet,\nso ist es nicht mehr da.\nAlso der Mensch vergehet,\nsein End, das ist ihm nah.",
+        "textFrench": "Chœur I (poème libre) : Dieu, prends encore soin de nous,\ncar sans toi rien n'est accompli\nen toutes nos affaires.\nSois donc notre abri et notre lumière,\net si notre espérance ne nous trompe pas,\ntu continueras de le faire.\nHeureux celui qui, ferme et solide,\nse repose sur toi et sur ta grâce.\n\nChœur II (choral) : Comme un père a pitié\nde ses tout jeunes petits enfants,\nainsi le Seigneur agit envers nous, pauvres,\nlorsque nous le craignons d'un cœur filial et pur.\nIl connaît notre pauvre condition,\nDieu sait que nous ne sommes que poussière,\ncomme l'herbe sous le râteau,\nune fleur et un feuillage qui tombe.\nQue le vent souffle seulement dessus,\net ce n'est déjà plus là.\nAinsi l'homme s'en va,\nsa fin lui est proche."
+      },
+      {
+        "number": "3",
+        "type": "Chœur (double chœur puis fugue à huit voix)",
+        "voice": "SATB / SATB",
+        "scoring": "voix, instruments colla parte",
+        "textGerman": "Lobet den Herrn in seinen Taten,\nlobet ihn in seiner großen Herrlichkeit!\nAlles, was Odem hat, lobe den Herrn, Halleluja!",
+        "textFrench": "Louez l'Éternel dans ses œuvres,\nlouez-le dans sa grande magnificence !\nQue tout ce qui respire loue l'Éternel, Alléluia !"
+      }
+    ]
+  }
+}

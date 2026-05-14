@@ -1,0 +1,107 @@
+{
+  "work": {
+    "bwv": "BWV 227",
+    "titleGerman": "Jesu, meine Freude",
+    "titleFrench": "Jésus, ma joie",
+    "metadata": {
+      "date": "Datation incertaine, vraisemblablement vers 1723-1735. Longtemps rattaché à un service funèbre de juillet 1723, hypothèse aujourd'hui discutée.",
+      "place": "Leipzig.",
+      "occasion": "Occasion non établie avec certitude, probablement funéraire. C'est le plus long et le plus architecturé des six motets.",
+      "librettist": "Les six strophes du choral « Jesu, meine Freude » de Johann Franck (1653), en alternance avec des versets de l'Épître aux Romains 8.",
+      "scoring": "Chœur à cinq voix (SSATB) ; les mouvements varient de trois à cinq voix. Accompagnement instrumental colla parte non spécifié.",
+      "theological": "Le motet entrelace deux fils : le choral de Franck, intime et personnel — Jésus comme refuge contre la peur et la mort — et le texte de Paul, doctrinal — la vie selon l'Esprit affranchie de la chair. La conviction théologique de Paul fonde et soutient l'élan affectif du choral. Au centre, « Trotz dem alten Drachen » défie la mort et l'enfer avec une assurance presque guerrière.",
+      "musical": "Architecture en symétrie parfaite : onze mouvements organisés en miroir autour du mouvement central, une fugue à cinq voix sur « Ihr aber seid nicht fleischlich ». De part et d'autre, les strophes du choral et les versets pauliniens se répondent en arche. Bach varie constamment l'effectif et l'écriture — choral harmonisé, trio, fugue, choral orné — faisant de l'ensemble un catalogue des possibles de la polyphonie vocale. Le premier et le dernier mouvement reprennent le même choral, fermant le cercle.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture de référence, d'une architecture limpide. Vox Luminis sous Lionel Meunier en propose une version à une voix par partie d'une intensité remarquable, primée. Le RIAS-Kammerchor sous Rademann allie rigueur et chaleur. Pygmalion sous Raphaël Pichon en révèle le relief dramatique."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Choral",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Jesu, meine Freude,\nmeines Herzens Weide,\nJesu, meine Zier,\nach wie lang, ach lange\nist dem Herzen bange\nund verlangt nach dir!\nGottes Lamm, mein Bräutigam,\naußer dir soll mir auf Erden\nnichts sonst Liebers werden.",
+        "textFrench": "Jésus, ma joie,\npâture de mon cœur,\nJésus, ma parure,\nah, combien de temps, ah, depuis longtemps\nle cœur est dans l'angoisse\net te désire !\nAgneau de Dieu, mon Époux,\nhors de toi, rien sur la terre\nne me sera plus cher."
+      },
+      {
+        "number": "2",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Es ist nun nichts Verdammliches an denen, die in Christo Jesu sind,\ndie nicht nach dem Fleische wandeln, sondern nach dem Geist.",
+        "textFrench": "Il n'y a maintenant aucune condamnation pour ceux qui sont en Jésus-Christ,\nqui ne marchent pas selon la chair, mais selon l'Esprit."
+      },
+      {
+        "number": "3",
+        "type": "Choral",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Unter deinem Schirmen\nbin ich vor den Stürmen\naller Feinde frei.\nLass den Satan wittern,\nlass den Feind erbittern,\nmir steht Jesus bei.\nOb es itzt gleich kracht und blitzt,\nob gleich Sünd und Hölle schrecken,\nJesus will mich decken.",
+        "textFrench": "Sous ta protection,\nje suis à l'abri des tempêtes\nde tous les ennemis.\nQue Satan gronde,\nque l'ennemi s'irrite,\nJésus se tient près de moi.\nMême si maintenant tonne et fulmine,\nmême si le péché et l'enfer effraient,\nJésus veut me couvrir."
+      },
+      {
+        "number": "4",
+        "type": "Trio",
+        "voice": "Soprano I, Soprano II, Alto",
+        "scoring": "continuo",
+        "textGerman": "Denn das Gesetz des Geistes, der da lebendig machet in Christo Jesu,\nhat mich frei gemacht von dem Gesetz der Sünde und des Todes.",
+        "textFrench": "Car la loi de l'Esprit, qui donne la vie en Jésus-Christ,\nm'a affranchi de la loi du péché et de la mort."
+      },
+      {
+        "number": "5",
+        "type": "Choral (orné)",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Trotz dem alten Drachen,\nTrotz des Todes Rachen,\nTrotz der Furcht darzu!\nTobe, Welt, und springe,\nich steh hier und singe\nin gar sichrer Ruh.\nGottes Macht hält mich in acht;\nErd und Abgrund muss verstummen,\nob sie noch so brummen.",
+        "textFrench": "Au défi du vieux dragon,\nau défi de la gueule de la mort,\nau défi de la peur encore !\nDéchaîne-toi, monde, et bondis,\nje me tiens ici et je chante\nen un repos tout assuré.\nLa puissance de Dieu veille sur moi ;\nla terre et l'abîme doivent se taire,\nquelque bruit qu'ils fassent encore."
+      },
+      {
+        "number": "6",
+        "type": "Chœur (fugue à cinq voix)",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Ihr aber seid nicht fleischlich, sondern geistlich,\nso anders Gottes Geist in euch wohnet.\nWer aber Christi Geist nicht hat, der ist nicht sein.",
+        "textFrench": "Mais vous, vous n'êtes pas selon la chair, mais selon l'Esprit,\nsi du moins l'Esprit de Dieu habite en vous.\nMais celui qui n'a pas l'Esprit du Christ ne lui appartient pas."
+      },
+      {
+        "number": "7",
+        "type": "Choral",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Weg mit allen Schätzen,\ndu bist mein Ergötzen,\nJesu, meine Lust!\nWeg, ihr eitlen Ehren,\nich mag euch nicht hören,\nbleibt mir unbewusst!\nElend, Not, Kreuz, Schmach und Tod\nsoll mich, ob ich viel muss leiden,\nnicht von Jesu scheiden.",
+        "textFrench": "Loin de moi tous les trésors,\ntu es mes délices,\nJésus, ma joie !\nLoin, ô vains honneurs,\nje ne veux pas vous entendre,\nrestez-moi inconnus !\nMisère, détresse, croix, opprobre et mort\nne pourront, même si je dois beaucoup souffrir,\nme séparer de Jésus."
+      },
+      {
+        "number": "8",
+        "type": "Trio",
+        "voice": "Alto, Ténor, Basse",
+        "scoring": "continuo",
+        "textGerman": "So aber Christus in euch ist,\nso ist der Leib zwar tot um der Sünde willen;\nder Geist aber ist das Leben um der Gerechtigkeit willen.",
+        "textFrench": "Mais si Christ est en vous,\nle corps est mort à cause du péché ;\nmais l'esprit est vie à cause de la justice."
+      },
+      {
+        "number": "9",
+        "type": "Choral",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Gute Nacht, o Wesen,\ndas die Welt erlesen,\nmir gefällst du nicht!\nGute Nacht, ihr Sünden,\nbleibet weit dahinten,\nkommt nicht mehr ans Licht!\nGute Nacht, du Stolz und Pracht!\nDir sei ganz, du Lasterleben,\ngute Nacht gegeben.",
+        "textFrench": "Bonne nuit, ô existence\nque le monde a choisie,\ntu ne me plais pas !\nBonne nuit, ô péchés,\nrestez loin derrière,\nne revenez plus à la lumière !\nBonne nuit, ô orgueil et faste !\nÀ toi tout entière, ô vie de vice,\nque bonne nuit soit donnée."
+      },
+      {
+        "number": "10",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "So nun der Geist des, der Jesum von den Toten auferwecket hat, in euch wohnet,\nso wird auch derselbige, der Christum von den Toten auferwecket hat,\neure sterbliche Leiber lebendig machen um des willen, dass sein Geist in euch wohnet.",
+        "textFrench": "Si donc l'Esprit de celui qui a ressuscité Jésus d'entre les morts habite en vous,\ncelui qui a ressuscité Christ d'entre les morts\nrendra aussi la vie à vos corps mortels, à cause de son Esprit qui habite en vous."
+      },
+      {
+        "number": "11",
+        "type": "Choral",
+        "voice": "SSATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Weicht, ihr Trauergeister,\ndenn mein Freudenmeister,\nJesus, tritt herein.\nDenen, die Gott lieben,\nmuss auch ihr Betrüben\nlauter Zucker sein.\nDuld ich schon hier Spott und Hohn,\ndennoch bleibst du auch im Leide,\nJesu, meine Freude.",
+        "textFrench": "Retirez-vous, ô esprits de deuil,\ncar mon maître de joie,\nJésus, entre ici.\nPour ceux qui aiment Dieu,\nmême leur affliction\ndoit être pur sucre.\nMême si j'endure ici moqueries et outrages,\ntu demeures pourtant, même dans la souffrance,\nJésus, ma joie."
+      }
+    ]
+  }
+}

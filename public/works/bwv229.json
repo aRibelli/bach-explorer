@@ -1,0 +1,35 @@
+{
+  "work": {
+    "bwv": "BWV 229",
+    "titleGerman": "Komm, Jesu, komm",
+    "titleFrench": "Viens, Jésus, viens",
+    "metadata": {
+      "date": "Datation incertaine, vraisemblablement entre 1723 et 1730.",
+      "place": "Leipzig.",
+      "occasion": "Occasion non documentée, probablement funéraire — le texte est une méditation sur la mort désirée comme passage vers le Christ.",
+      "librettist": "Poème de Paul Thymich (1684), écrit à l'origine pour les funérailles d'un précédent recteur de Saint-Thomas. Le texte n'est pas biblique : c'est une prière libre.",
+      "scoring": "Double chœur à quatre voix (SATB / SATB). Accompagnement instrumental colla parte non spécifié.",
+      "theological": "« Komm, Jesu, komm » : l'âme épuisée appelle le Christ, non par désespoir mais par lassitude du chemin — « la force me manque toujours plus ». Le retournement vient au cœur du texte : « tu es le bon chemin, la vérité et la vie ». La mort cesse alors d'être une fin pour devenir une remise de soi : « je me remets entre tes mains ». Le motet s'achève sur cet abandon confiant.",
+      "musical": "Œuvre en deux mouvements. Le premier, ample, alterne dialogue antiphonaire des deux chœurs et passages homophones d'une grande tendresse — la mise en musique de « komm » (viens), répétée, doucement insistante, est inoubliable. Le second mouvement est désigné par Bach comme une « aria » : un choral à quatre voix d'une simplicité dépouillée, où les deux chœurs se réunissent pour énoncer ensemble l'abandon final. Le contraste entre la polyphonie élaborée du premier mouvement et le recueillement du second fait toute la dramaturgie.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture d'une douceur exemplaire. Vox Luminis sous Lionel Meunier en propose une version à une voix par partie d'une intimité saisissante. Le RIAS-Kammerchor sous Rademann et Pygmalion sous Pichon figurent aussi parmi les références."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur (double chœur)",
+        "voice": "SATB / SATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Komm, Jesu, komm, mein Leib ist müde,\ndie Kraft verschwindt je mehr und mehr,\nich sehne mich nach deinem Frieden;\nder saure Weg wird mir zu schwer!\nKomm, komm, ich will mich dir ergeben,\ndu bist der rechte Weg, die Wahrheit und das Leben.",
+        "textFrench": "Viens, Jésus, viens, mon corps est las,\nla force me manque toujours plus,\nj'aspire à ta paix ;\nle chemin amer me devient trop pénible !\nViens, viens, je veux me remettre à toi,\ntu es le bon chemin, la vérité et la vie."
+      },
+      {
+        "number": "2",
+        "type": "Aria (Choral, double chœur réuni)",
+        "voice": "SATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Drum schließ ich mich in deine Hände\nund sage, Welt, zu guter Nacht!\nEilt gleich mein Lebenslauf zu Ende,\nist doch der Geist wohl angebracht.\nEr soll bei seinem Schöpfer schweben,\nweil Jesus ist und bleibt\nder wahre Weg zum Leben.",
+        "textFrench": "C'est pourquoi je me remets entre tes mains\net je dis au monde : bonne nuit !\nMême si le cours de ma vie se hâte vers sa fin,\nl'esprit, lui, est bien placé.\nIl planera auprès de son Créateur,\ncar Jésus est et demeure\nle vrai chemin vers la vie."
+      }
+    ]
+  }
+}

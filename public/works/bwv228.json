@@ -1,0 +1,35 @@
+{
+  "work": {
+    "bwv": "BWV 228",
+    "titleGerman": "Fürchte dich nicht, ich bin bei dir",
+    "titleFrench": "Ne crains rien, je suis avec toi",
+    "metadata": {
+      "date": "Datation incertaine ; longtemps rattaché à un service funèbre de février 1726, hypothèse discutée. Certains éléments stylistiques suggèrent une œuvre de jeunesse révisée.",
+      "place": "Leipzig (ou antérieur).",
+      "occasion": "Probablement funéraire. Le texte de consolation soutient cette hypothèse.",
+      "librettist": "Deux versets du prophète Isaïe (41, 10 et 43, 1) ; deux strophes du choral « Warum sollt ich mich denn grämen » de Paul Gerhardt.",
+      "scoring": "Double chœur à quatre voix (SATB / SATB), réuni en un seul chœur dans la seconde partie. Accompagnement instrumental colla parte non spécifié.",
+      "theological": "« Fürchte dich nicht » — ne crains rien : la parole de Dieu à travers Isaïe, deux fois répétée, encadre la méditation. Le motif de la peur vaincue par la présence divine et par l'appartenance — « je t'ai appelé par ton nom, tu es à moi ». Devant la mort, l'œuvre ne raisonne pas : elle répète la promesse, jusqu'à ce qu'elle apaise.",
+      "musical": "Œuvre en deux grandes sections. La première oppose les deux chœurs en dialogue antiphonaire sur le premier verset d'Isaïe. La seconde réunit les huit voix : les voix graves déploient une fugue sur le second verset d'Isaïe tandis que les sopranos, au-dessus, font entendre le choral de Gerhardt en valeurs longues — superposition magistrale du texte prophétique et de la réponse de la foi. La parole « du bist mein » (tu es à moi) est mise en relief avec une tendresse particulière.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture d'une grande clarté. Vox Luminis sous Lionel Meunier et le RIAS-Kammerchor sous Rademann figurent parmi les références. Les approches à voix solistes révèlent le tissu du double chœur ; les chœurs plus amples en accentuent le caractère consolateur."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur (double chœur)",
+        "voice": "SATB / SATB",
+        "scoring": "instruments colla parte",
+        "textGerman": "Fürchte dich nicht, ich bin bei dir;\nweiche nicht, denn ich bin dein Gott;\nich stärke dich, ich helfe dir auch,\nich erhalte dich durch die rechte Hand meiner Gerechtigkeit.",
+        "textFrench": "Ne crains rien, je suis avec toi ;\nne t'écarte pas, car je suis ton Dieu ;\nje te fortifie, je viens aussi à ton secours,\nje te soutiens par la droite de ma justice."
+      },
+      {
+        "number": "2",
+        "type": "Chœur et Choral (double chœur réuni)",
+        "voice": "SATB (fugue) avec Soprano (choral)",
+        "scoring": "instruments colla parte",
+        "textGerman": "Fürchte dich nicht, denn ich habe dich erlöset;\nich habe dich bei deinem Namen gerufen, du bist mein.\n\n(Choral, au soprano:)\nHerr, mein Hirt, Brunn aller Freuden,\ndu bist mein, ich bin dein,\nniemand kann uns scheiden.\nIch bin dein, weil du dein Leben\nund dein Blut, mir zugut,\nin den Tod gegeben.\n\nDu bist mein, weil ich dich fasse\nund dich nicht, o mein Licht,\naus dem Herzen lasse.\nLass mich, lass mich hingelangen,\nwo du mich und ich dich\nlieblich werd umfangen.",
+        "textFrench": "Ne crains rien, car je t'ai racheté ;\nje t'ai appelé par ton nom, tu es à moi.\n\n(Choral, au soprano :)\nSeigneur, mon berger, source de toutes les joies,\ntu es à moi, je suis à toi,\nnul ne peut nous séparer.\nJe suis à toi, parce que tu as donné\nta vie et ton sang, pour mon bien,\nà la mort.\n\nTu es à moi, parce que je te saisis\net que je ne te laisse pas, ô ma lumière,\nsortir de mon cœur.\nLaisse-moi, laisse-moi parvenir\nlà où toi et moi\nnous nous embrasserons tendrement."
+      }
+    ]
+  }
+}

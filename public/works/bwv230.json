@@ -1,0 +1,35 @@
+{
+  "work": {
+    "bwv": "BWV 230",
+    "titleGerman": "Lobet den Herrn, alle Heiden",
+    "titleFrench": "Louez l'Éternel, vous toutes les nations",
+    "metadata": {
+      "date": "Datation incertaine. L'authenticité et la date font débat : certains musicologues y voient une œuvre tardive, d'autres une page de fonction moins aboutie. L'attribution à Bach est généralement maintenue.",
+      "place": "Leipzig (présumé).",
+      "occasion": "Occasion non documentée.",
+      "librettist": "Psaume 117 intégral — le plus court des psaumes — suivi de la doxologie « Alleluja ».",
+      "scoring": "Chœur à quatre voix (SATB), avec basse continue indépendante explicitement notée — particularité qui distingue ce motet des autres, généralement a cappella ou colla parte.",
+      "theological": "Le Psaume 117, deux versets seulement : un appel universel à la louange — « toutes les nations », « tous les peuples » — fondé sur deux attributs de Dieu, sa grâce et sa fidélité éternelle. Le plus bref et le plus large des psaumes : l'invitation déborde Israël pour embrasser l'humanité entière. La doxologie finale prolonge l'élan en pur jubilé.",
+      "musical": "Le plus concis et le plus homogène des six motets, en un seul mouvement continu. L'écriture, fluide et virtuose, culmine dans un long « Alleluja » fugué qui occupe toute la dernière partie. La présence d'une basse continue autonome, contrairement aux autres motets, rapproche cette page de l'écriture de cantate. Œuvre brillante, d'un seul tenant, qui se chante d'une traite comme une jubilation soutenue.",
+      "interpretations": "Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) en donne une lecture allante et lumineuse. Vox Luminis sous Lionel Meunier et le RIAS-Kammerchor sous Rademann figurent parmi les références modernes. Sa brièveté en fait une page souvent choisie en ouverture ou en conclusion de programme."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur",
+        "voice": "SATB",
+        "scoring": "basse continue",
+        "textGerman": "Lobet den Herrn, alle Heiden,\nund preiset ihn, alle Völker!\nDenn seine Gnade und Wahrheit\nwaltet über uns in Ewigkeit.",
+        "textFrench": "Louez l'Éternel, vous toutes les nations,\net célébrez-le, vous tous les peuples !\nCar sa grâce et sa fidélité\nrègnent sur nous éternellement."
+      },
+      {
+        "number": "2",
+        "type": "Chœur (fugue)",
+        "voice": "SATB",
+        "scoring": "basse continue",
+        "textGerman": "Alleluja!",
+        "textFrench": "Alléluia !"
+      }
+    ]
+  }
+}
