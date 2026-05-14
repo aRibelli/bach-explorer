@@ -1,1 +1,115 @@
-
+{
+  "work": {
+    "bwv": "BWV 243",
+    "titleGerman": "Magnificat in D-Dur",
+    "titleFrench": "Magnificat en ré majeur",
+    "metadata": {
+      "date": "Version en ré majeur : vers 1733. Première version en mi bémol majeur (BWV 243a) : Noël 1723.",
+      "place": "Leipzig",
+      "occasion": "Vêpres des grandes fêtes (Noël, Pâques, Pentecôte, Visitation). Le Magnificat — cantique de Marie — était chanté en latin à Leipzig les jours de fête.",
+      "librettist": "Texte liturgique latin : le cantique de Marie (Luc 1, 46-55), suivi de la doxologie Gloria Patri.",
+      "scoring": "Soli SSATB, chœur à cinq voix (SSATB), trois trompettes, timbales, deux flûtes traversières, deux hautbois, cordes, basse continue. La première version y ajoutait quatre interpolations de Noël (laudes tropées).",
+      "theological": "Le Magnificat est le chant d'action de grâce de Marie lors de la Visitation : l'âme qui exalte le Seigneur et célèbre le renversement des puissants. Bach en fait une fresque concentrée où chaque verset reçoit son climat propre, du jubilé initial à l'humilité de l'Esurientes. La doxologie finale referme l'œuvre en réexposant la musique du début, figurant l'éternité du « comme il était au commencement ».",
+      "musical": "Œuvre d'une densité exceptionnelle : douze mouvements en une demi-heure, sans un instant de remplissage. Bach varie sans cesse l'effectif — grand chœur éclatant (Magnificat, Fecit potentiam, Gloria), arias intimistes, terzetto (Suscepit Israel) sur le ton du chant gregorien confié au hautbois. Le chœur est à cinq voix, ce qui est rare chez Bach et permet des entrelacs serrés. L'écriture des trompettes, lumineuse, ancre l'œuvre dans le registre festif. La version primitive était en mi bémol ; le passage en ré majeur a aussi modernisé l'instrumentation (flûtes traversières remplaçant les flûtes à bec).",
+      "interpretations": "Nikolaus Harnoncourt (Concentus Musicus Wien, Teldec, 1984) propose une lecture incisive et colorée sur instruments anciens. Philippe Herreweghe (Collegium Vocale Gent, Harmonia Mundi) conjugue clarté polyphonique et ferveur. John Eliot Gardiner (Monteverdi Choir, Philips) en livre une version éclatante et virtuose. Pour la version primitive en mi bémol avec les interpolations de Noël, Andrew Parrott et Philippe Pierlot ont signé des lectures de référence."
+    },
+    "movements": [
+      {
+        "number": "1",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "3 trompettes, timbales, 2 flûtes, 2 hautbois, cordes, continuo",
+        "textGerman": "Magnificat anima mea Dominum.",
+        "textFrench": "Mon âme exalte le Seigneur."
+      },
+      {
+        "number": "2",
+        "type": "Aria",
+        "voice": "Soprano II",
+        "scoring": "cordes, continuo",
+        "textGerman": "Et exsultavit spiritus meus\nin Deo salutari meo.",
+        "textFrench": "Et mon esprit a tressailli de joie\nen Dieu mon Sauveur."
+      },
+      {
+        "number": "3",
+        "type": "Aria",
+        "voice": "Soprano I",
+        "scoring": "hautbois d'amore, continuo",
+        "textGerman": "Quia respexit humilitatem ancillae suae;\necce enim ex hoc beatam me dicent",
+        "textFrench": "Parce qu'il a jeté les yeux sur l'humilité de sa servante ;\nvoici en effet que désormais me diront bienheureuse"
+      },
+      {
+        "number": "4",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "cordes, continuo",
+        "textGerman": "omnes generationes.",
+        "textFrench": "toutes les générations."
+      },
+      {
+        "number": "5",
+        "type": "Aria",
+        "voice": "Basse",
+        "scoring": "continuo",
+        "textGerman": "Quia fecit mihi magna qui potens est,\net sanctum nomen eius.",
+        "textFrench": "Parce qu'il a fait pour moi de grandes choses, lui qui est puissant,\net saint est son nom."
+      },
+      {
+        "number": "6",
+        "type": "Duo",
+        "voice": "Alto, Ténor",
+        "scoring": "flûtes, cordes, continuo",
+        "textGerman": "Et misericordia a progenie in progenies\ntimentibus eum.",
+        "textFrench": "Et sa miséricorde s'étend d'âge en âge\nsur ceux qui le craignent."
+      },
+      {
+        "number": "7",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "3 trompettes, timbales, flûtes, hautbois, cordes, continuo",
+        "textGerman": "Fecit potentiam in brachio suo,\ndispersit superbos mente cordis sui.",
+        "textFrench": "Il a déployé la force de son bras,\nil a dispersé les superbes dans les pensées de leur cœur."
+      },
+      {
+        "number": "8",
+        "type": "Aria",
+        "voice": "Ténor",
+        "scoring": "cordes à l'unisson, continuo",
+        "textGerman": "Deposuit potentes de sede,\net exaltavit humiles.",
+        "textFrench": "Il a renversé les puissants de leur trône,\net il a élevé les humbles."
+      },
+      {
+        "number": "9",
+        "type": "Aria",
+        "voice": "Alto",
+        "scoring": "2 flûtes, continuo",
+        "textGerman": "Esurientes implevit bonis,\net divites dimisit inanes.",
+        "textFrench": "Il a comblé de biens les affamés,\net il a renvoyé les riches les mains vides."
+      },
+      {
+        "number": "10",
+        "type": "Terzetto",
+        "voice": "Soprano I, Soprano II, Alto",
+        "scoring": "hautbois à l'unisson, continuo",
+        "textGerman": "Suscepit Israel puerum suum,\nrecordatus misericordiae suae.",
+        "textFrench": "Il a secouru Israël son serviteur,\nse souvenant de sa miséricorde."
+      },
+      {
+        "number": "11",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "continuo",
+        "textGerman": "Sicut locutus est ad patres nostros,\nAbraham et semini eius in saecula.",
+        "textFrench": "Ainsi qu'il l'avait promis à nos pères,\nà Abraham et à sa descendance pour les siècles."
+      },
+      {
+        "number": "12",
+        "type": "Chœur",
+        "voice": "SSATB",
+        "scoring": "3 trompettes, timbales, flûtes, hautbois, cordes, continuo",
+        "textGerman": "Gloria Patri, gloria Filio,\ngloria et Spiritui Sancto!\nSicut erat in principio et nunc et semper\net in saecula saeculorum. Amen.",
+        "textFrench": "Gloire au Père, gloire au Fils,\ngloire aussi au Saint-Esprit !\nComme il était au commencement, maintenant et toujours,\net dans les siècles des siècles. Amen."
+      }
+    ]
+  }
+}
