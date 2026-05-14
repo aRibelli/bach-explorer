@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   BACH EXPLORER — Logique applicative — v2
+   BACH EXPLORER — Logique applicative — v2.1
+   Ajouts : URL paramétrée (?bwv=) + historique local (bouton Récents)
    ═══════════════════════════════════════════════════════════════ */
 
 // ───────────────────────────────────────────────
@@ -117,6 +118,10 @@ const LOADING_MSGS = [
   "Préparation des textes",
 ];
 
+// Historique : clé de stockage local et nombre d'entrées conservées
+const HISTORY_KEY = "bach-explorer-history";
+const HISTORY_MAX = 12;
+
 // ───────────────────────────────────────────────
 // ÉLÉMENTS DOM
 // ───────────────────────────────────────────────
@@ -150,7 +155,82 @@ const els = {
 let currentScreen = "home";
 let loadingInterval = null;
 let calendarOverlay = null;
-let lastQuery = null;          // mémorise la dernière requête pour « Réessayer »
+let lastQuery = null;
+
+// ───────────────────────────────────────────────
+// HISTORIQUE LOCAL — lecture / écriture
+// ───────────────────────────────────────────────
+function readHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) {
+    // localStorage indisponible (mode privé strict, etc.) : on dégrade en silence.
+    return [];
+  }
+}
+
+function writeHistory(arr) {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(arr));
+  } catch (e) {
+    // Échec d'écriture : sans gravité, l'historique ne sera simplement pas persisté.
+  }
+}
+
+// Ajoute une œuvre en tête de l'historique, sans doublon.
+function pushHistory(work) {
+  if (!work || !work.bwv) return;
+  const entry = {
+    bwv: work.bwv,
+    titleGerman: work.titleGerman || work.title || "",
+    titleFrench: work.titleFrench || "",
+  };
+  let hist = readHistory();
+  // On retire une éventuelle entrée du même BWV avant de remettre en tête.
+  hist = hist.filter(h => h.bwv !== entry.bwv);
+  hist.unshift(entry);
+  if (hist.length > HISTORY_MAX) hist = hist.slice(0, HISTORY_MAX);
+  writeHistory(hist);
+}
+
+// ───────────────────────────────────────────────
+// URL PARAMÉTRÉE — lecture / écriture
+// ───────────────────────────────────────────────
+
+// Met à jour l'URL de la barre d'adresse sans recharger la page.
+function setUrlForBwv(bwv) {
+  try {
+    // bwv est du type "BWV 140" : on extrait le nombre.
+    const m = String(bwv).match(/(\d{1,3}[a-z]?)/i);
+    const num = m ? m[1] : "";
+    const url = num ? `${location.pathname}?bwv=${num}` : location.pathname;
+    history.replaceState(null, "", url);
+  } catch (e) {
+    // history.replaceState peut être indisponible dans de rares contextes.
+  }
+}
+
+// Efface le paramètre de l'URL (retour à l'accueil).
+function clearUrl() {
+  try {
+    history.replaceState(null, "", location.pathname);
+  } catch (e) {}
+}
+
+// Lit le paramètre ?bwv= au chargement. Retourne une requête ou null.
+function readBwvFromUrl() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const bwv = params.get("bwv");
+    if (bwv && /^\d{1,3}[a-z]?$/i.test(bwv.trim())) {
+      return "BWV " + bwv.trim();
+    }
+  } catch (e) {}
+  return null;
+}
 
 // ───────────────────────────────────────────────
 // NAVIGATION ENTRE ÉCRANS
@@ -169,7 +249,9 @@ function showScreen(name) {
 function goHome() {
   closeCalendar();
   els.searchInput.value = "";
+  clearUrl();
   showScreen("home");
+  renderRecents();   // rafraîchit l'état du bouton Récents
   els.searchInput.focus();
 }
 
@@ -235,6 +317,73 @@ function closeCalendar() {
 }
 
 // ───────────────────────────────────────────────
+// HISTORIQUE — affichage (bouton « Récents » + dépliage)
+// ───────────────────────────────────────────────
+// Le bouton et la liste sont injectés dynamiquement dans l'écran
+// d'accueil, sous le bloc de recherche. Aucune modification du HTML
+// n'est donc nécessaire.
+
+function renderRecents() {
+  const homeScreen = els.screens.home;
+  if (!homeScreen) return;
+
+  // On retire un éventuel rendu précédent pour repartir propre.
+  const old = $("recents-block");
+  if (old) old.remove();
+
+  const hist = readHistory();
+  if (!hist.length) return;   // pas d'historique → pas de bouton
+
+  const block = document.createElement("div");
+  block.id = "recents-block";
+  block.className = "recents-block";
+
+  // Bouton bascule
+  const toggle = document.createElement("button");
+  toggle.id = "recents-toggle";
+  toggle.className = "recents-toggle";
+  toggle.textContent = "▸ Récents";
+
+  // Liste (masquée par défaut)
+  const list = document.createElement("div");
+  list.id = "recents-list";
+  list.className = "recents-list";
+  list.hidden = true;
+
+  for (const h of hist) {
+    const item = document.createElement("button");
+    item.className = "recents-item";
+    const num = (h.bwv || "").replace(/^BWV\s*/i, "");
+    item.innerHTML = `
+      <span class="recents-bwv">BWV ${num}</span>
+      <span class="recents-title">${escapeHtml(h.titleGerman || "")}</span>
+    `;
+    item.addEventListener("click", () => {
+      els.searchInput.value = h.bwv;
+      loadWork(h.bwv);
+    });
+    list.appendChild(item);
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = !list.hidden;
+    list.hidden = isOpen;
+    toggle.textContent = isOpen ? "▸ Récents" : "▾ Récents";
+  });
+
+  block.appendChild(toggle);
+  block.appendChild(list);
+
+  // On insère le bloc à la suite du bloc de recherche.
+  const searchBlock = homeScreen.querySelector(".search-block");
+  if (searchBlock) {
+    searchBlock.appendChild(block);
+  } else {
+    homeScreen.appendChild(block);
+  }
+}
+
+// ───────────────────────────────────────────────
 // CHARGEMENT D'UNE ŒUVRE — appel API via proxy
 // ───────────────────────────────────────────────
 async function loadWork(query) {
@@ -259,8 +408,6 @@ async function loadWork(query) {
       body: JSON.stringify({ query }),
     });
 
-    // On tente toujours de lire le corps en JSON : même en cas
-    // d'erreur, le serveur renvoie { error: "..." } exploitable.
     let data = null;
     try {
       data = await response.json();
@@ -279,7 +426,6 @@ async function loadWork(query) {
       throw new Error("Réponse illisible du serveur.");
     }
     if (data.error) {
-      // Erreur « propre » (œuvre non identifiée, etc.)
       throw new Error(data.error);
     }
     if (!data.work) {
@@ -287,6 +433,8 @@ async function loadWork(query) {
     }
 
     renderWork(data.work);
+    pushHistory(data.work);            // mémorise l'œuvre dans l'historique
+    setUrlForBwv(data.work.bwv);       // met l'URL à jour (?bwv=…)
     showScreen("work");
     window.scrollTo({ top: 0, behavior: "instant" });
   } catch (err) {
@@ -299,19 +447,13 @@ async function loadWork(query) {
 // AFFICHAGE D'UNE ERREUR — épuré, sans JSON brut
 // ───────────────────────────────────────────────
 function showError(message) {
-  // Nettoyage défensif : si un fragment de JSON a traversé,
-  // on tente d'en extraire le message lisible.
   let clean = String(message).trim();
   const m = clean.match(/"error"\s*:\s*"([^"]+)"/);
   if (m) clean = m[1];
-  // On retire d'éventuelles accolades ou guillemets résiduels.
   clean = clean.replace(/^[\s{"]+|[\s}"]+$/g, "");
 
   els.errorMessage.textContent = clean;
-
-  // Le bouton « Réessayer » n'a de sens que si une requête existe.
   els.errorRetry.hidden = !lastQuery;
-
   showScreen("error");
 }
 
@@ -349,7 +491,6 @@ function typeColor(type) {
 // RENDU — panneau Informations
 // ───────────────────────────────────────────────
 function renderMeta(meta) {
-  // Bloc des données factuelles
   const facts = [];
   if (meta.date)       facts.push(`<div><strong>Date :</strong> ${escapeHtml(meta.date)}</div>`);
   if (meta.place)      facts.push(`<div><strong>Lieu :</strong> ${escapeHtml(meta.place)}</div>`);
@@ -367,8 +508,6 @@ function renderMeta(meta) {
     `;
   }
 
-  // Sections rédigées : contexte théologique, musical, interprétations.
-  // On reste compatible avec l'ancien champ « notes » au cas où.
   const sections = [
     ["Contexte théologique", meta.theological],
     ["Spécificités musicales", meta.musical],
@@ -429,7 +568,6 @@ function renderWork(work) {
 
   els.workContent.innerHTML = html;
 
-  // Toggle du panneau Informations
   const toggle = $("meta-toggle");
   const metaEl = $("work-meta");
   if (toggle && metaEl) {
@@ -446,12 +584,12 @@ function renderWork(work) {
 // ───────────────────────────────────────────────
 function setup() {
   renderCalendar();
+  renderRecents();
 
   els.calendarToggle.addEventListener("click", openCalendar);
   els.homeButton.addEventListener("click", goHome);
   els.errorBack.addEventListener("click", goHome);
 
-  // « Réessayer » relance la dernière requête mémorisée
   if (els.errorRetry) {
     els.errorRetry.addEventListener("click", () => {
       if (lastQuery) loadWork(lastQuery);
@@ -469,7 +607,14 @@ function setup() {
     }
   });
 
-  els.searchInput.focus();
+  // Au chargement : si l'URL contient ?bwv=…, on ouvre directement l'œuvre.
+  const urlQuery = readBwvFromUrl();
+  if (urlQuery) {
+    els.searchInput.value = urlQuery;
+    loadWork(urlQuery);
+  } else {
+    els.searchInput.focus();
+  }
 }
 
 if (document.readyState === "loading") {
