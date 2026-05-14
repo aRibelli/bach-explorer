@@ -1,26 +1,43 @@
 /* ═══════════════════════════════════════════════════════════════
-   BACH EXPLORER — Styles
+   BACH EXPLORER — Styles — v2
    Optimisé pour lecture en concert, faible luminosité, iPhone
+   ───────────────────────────────────────────────────────────────
+   Principe v2 : l'ambre est RÉSERVÉ au contenu musical et liturgique.
+   Les éléments d'interface (boutons, contrôles) relèvent d'une
+   famille visuelle distincte — sépia sourd, sans-serif, discrète.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
+  /* — Fonds — */
   --bg-dark:        #1a1612;
   --bg-paper:       #221d18;
   --bg-elevated:    #2a241e;
 
-  --text-primary:   #f5efe2;  /* français : crème lumineux */
-  --text-german:    #c8b48a;  /* allemand : ambre retenu */
-  --text-meta:      #8a8070;  /* méta : sépia discret */
+  /* — Contenu : texte — */
+  --text-primary:   #f5efe2;  /* traduction française : crème lumineux */
+  --text-german:    #d8a94e;  /* texte allemand original : ocre franc */
+  --text-meta:      #8a8070;  /* méta-texte : sépia discret */
   --text-label:     #6a6050;
 
+  /* — Contenu : accents musicaux (ambre, réservé) — */
   --gold:           #c8922a;
   --gold-glow:      #e8a832;
+
+  /* — Interface : famille distincte (sépia sourd) — */
+  --ui-text:        #9a8d76;  /* libellés de boutons : sépia neutre */
+  --ui-text-active: #c9bca0;  /* boutons au survol/actif */
+  --ui-line:        #3a322a;  /* contours de boutons */
+  --ui-fill:        #252019;  /* fond de bouton discret */
+  --ui-fill-active: #2f2820;
+
+  /* — Structure — */
   --border:         #3a322a;
   --border-soft:    #2a241e;
 
+  /* — Types de mouvements (accents de contenu) — */
   --type-choeur:    #e8a832;
   --type-aria:      #f5efe2;
-  --type-recit:     #c8b48a;
+  --type-recit:     #d8a94e;
   --type-choral:    #9b7de8;
   --type-duo:       #f5a87e;
 }
@@ -55,6 +72,16 @@ input {
 }
 
 /* ───────────────────────────────────────────────
+   FAMILLE INTERFACE — boutons et contrôles
+   Sans-serif, sépia sourd, discrète. Jamais d'ambre.
+   ─────────────────────────────────────────────── */
+.ui-control {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ui-text);
+  letter-spacing: 0.04em;
+}
+
+/* ───────────────────────────────────────────────
    EN-TÊTE
    ─────────────────────────────────────────────── */
 .header {
@@ -66,34 +93,40 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
-  padding-top: max(14px, env(safe-area-inset-top));
+  padding: 12px 16px;
+  padding-top: max(12px, env(safe-area-inset-top));
 }
 
 .title {
   margin: 0;
   font-family: Georgia, serif;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: normal;
-  letter-spacing: 0.05em;
-  color: var(--gold);
+  letter-spacing: 0.06em;
+  color: var(--gold);          /* le titre EST du contenu : ambre */
 }
 
-.calendar-toggle,
-.home-button {
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
-  color: var(--gold);
-  border-radius: 4px;
+/* Boutons d'en-tête : famille interface */
+.header-button {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--ui-line);
+  border-radius: 6px;
+  background: var(--ui-fill);
+  transition: background 0.15s ease;
 }
 
-.calendar-toggle:active,
-.home-button:active {
-  background: var(--bg-elevated);
+.header-button:active {
+  background: var(--ui-fill-active);
+}
+
+.header-icon {
+  font-size: 18px;
+  color: var(--ui-text);       /* icône en sépia, pas en ambre */
+  line-height: 1;
 }
 
 /* ───────────────────────────────────────────────
@@ -124,7 +157,7 @@ input {
 .calendar-title {
   margin: 0 0 22px;
   font-family: Georgia, serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: normal;
   color: var(--gold);
   letter-spacing: 0.05em;
@@ -208,8 +241,8 @@ input {
 }
 
 .screen {
-  padding: 32px 22px;
-  padding-bottom: max(32px, env(safe-area-inset-bottom));
+  padding: 30px 22px;
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
 }
 
 /* ───────────────────────────────────────────────
@@ -247,13 +280,15 @@ input {
   border-color: var(--gold);
 }
 
+/* Bouton Chercher : c'est l'action principale — il garde l'ambre,
+   mais en sans-serif pour signaler sa nature de commande. */
 .search-button {
   width: 100%;
   background: var(--gold);
   color: var(--bg-dark);
-  font-size: 14px;
-  font-family: system-ui, -apple-system, sans-serif;
-  letter-spacing: 0.08em;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 14px 20px;
   border-radius: 4px;
@@ -293,13 +328,13 @@ input {
 }
 
 .loading-spinner {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border: 2px solid var(--border);
   border-top-color: var(--gold);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 @keyframes spin {
@@ -315,10 +350,10 @@ input {
 }
 
 .loading-label {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 13px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
   color: var(--text-label);
+  letter-spacing: 0.06em;
   margin: 0;
 }
 
@@ -332,14 +367,14 @@ input {
   justify-content: center;
   text-align: center;
   margin-top: 80px;
-  max-width: 440px;
+  max-width: 460px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .error-icon {
-  color: #e05050;
-  font-size: 32px;
+  color: #d98a3a;
+  font-size: 30px;
   margin-bottom: 18px;
 }
 
@@ -348,25 +383,265 @@ input {
   font-style: italic;
   font-size: 15px;
   color: var(--text-meta);
-  line-height: 1.8;
+  line-height: 1.75;
   margin: 0 0 26px;
 }
 
-.back-button {
-  border: 1px solid rgba(200, 146, 42, 0.4);
-  color: var(--gold);
-  padding: 11px 26px;
-  border-radius: 4px;
-  font-size: 13px;
-  font-family: system-ui, -apple-system, sans-serif;
-  letter-spacing: 0.05em;
-  min-height: 44px;
+.error-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.back-button:active {
-  background: var(--bg-elevated);
+/* Boutons d'erreur : famille interface */
+.error-button {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--ui-text);
+  border: 1px solid var(--ui-line);
+  background: var(--ui-fill);
+  padding: 11px 24px;
+  border-radius: 4px;
+  min-height: 44px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.error-button:active {
+  background: var(--ui-fill-active);
+  color: var(--ui-text-active);
+}
+
+/* Le bouton Réessayer est l'action recommandée : un peu plus affirmé */
+.error-button-primary {
+  color: var(--gold);
+  border-color: rgba(200, 146, 42, 0.45);
+}
+
+.error-button-primary:active {
+  background: var(--ui-fill-active);
+  color: var(--gold-glow);
 }
 
 /* ───────────────────────────────────────────────
-   ŒUVRE — Affichage principal
+   ŒUVRE — En-tête
    ─────────────────────────────────────────────── */
+.work-content {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.work-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.work-bwv {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.work-title-de {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.work-title-fr {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-meta);     /* descendu en intensité : ce n'est pas un accent */
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Bouton Informations : famille interface, nettement détaché du titre */
+.work-meta-toggle {
+  margin-top: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ui-text);
+  border: 1px solid var(--ui-line);
+  background: var(--ui-fill);
+  padding: 8px 16px;
+  border-radius: 4px;
+  min-height: 38px;
+  transition: background 0.15s ease;
+}
+
+.work-meta-toggle:active {
+  background: var(--ui-fill-active);
+}
+
+/* ───────────────────────────────────────────────
+   ŒUVRE — Panneau Informations
+   ─────────────────────────────────────────────── */
+.work-meta {
+  background: var(--bg-paper);
+  border-left: 2px solid var(--gold);
+  padding: 18px 20px;
+  margin-bottom: 30px;
+}
+
+.work-meta-section {
+  margin-bottom: 16px;
+}
+
+.work-meta-section:last-child {
+  margin-bottom: 0;
+}
+
+.work-meta-heading {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-label);
+  margin: 0 0 6px;
+}
+
+.work-meta-body {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--text-meta);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.work-meta-body strong {
+  color: var(--text-primary);
+  font-weight: normal;
+}
+
+/* Bloc des données factuelles (date, lieu, effectif…) */
+.work-meta-facts {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--text-meta);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.work-meta-facts div {
+  margin-bottom: 3px;
+}
+
+.work-meta-facts strong {
+  color: var(--text-primary);
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+/* ───────────────────────────────────────────────
+   MOUVEMENTS
+   ─────────────────────────────────────────────── */
+.movement {
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.movement:last-child {
+  border-bottom: none;
+}
+
+.movement-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.movement-number {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: var(--text-label);
+  letter-spacing: 0.08em;
+}
+
+.movement-type {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.movement-voice {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-meta);
+}
+
+.movement-scoring {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-label);
+  width: 100%;
+  margin-top: -8px;
+}
+
+/* — Les paroles : colonne unique, allemand puis français — */
+.movement-text {
+  display: block;
+}
+
+/* Texte allemand original : ocre, c'est la source */
+.text-german {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-german);
+  margin-bottom: 18px;
+}
+
+/* Traduction française : crème, légèrement en retrait */
+.text-french {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-primary);
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* Strophes : chaque paragraphe aéré */
+.text-german p,
+.text-french p {
+  margin: 0 0 1.1em;
+}
+
+.text-german p:last-child,
+.text-french p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sur écran large : on peut se permettre les deux colonnes */
+@media (min-width: 768px) {
+  .movement-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .text-german {
+    margin-bottom: 0;
+  }
+
+  .text-french {
+    padding-top: 0;
+    border-top: none;
+  }
+}
